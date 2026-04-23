@@ -8,72 +8,75 @@
     <style>
         .houston-image {
             width: 100%;
-            max-width: 350px;
+            max-width: 380px;
             height: auto;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
             margin: 0 auto;
         }
-        .bg-custom-dark { background: radial-gradient(circle, #1a110a 0%, #000000 100%); }
-        .gold-border { border: 2px solid #c5a059; }
-        .btn-gold { background-color: #c5a059; color: black; font-weight: 900; }
+        .bg-custom-dark { background: radial-gradient(circle, #242424 0%, #000000 100%); }
+        .gold-border { border: 2px solid #eab308; }
+        .btn-gold { background-color: #eab308; color: black; font-weight: 900; }
+        .text-houston { color: #e11d48; } /* Color similar al 'Houston' de la foto */
     </style>
 </head>
 <body class="bg-custom-dark text-white font-sans min-h-screen flex flex-col items-center p-6">
 
-    <header class="w-full max-w-md text-center mb-6">
-        <img src="https://raw.githubusercontent.com/haroldco45/recomiendoy.../main/1002169966.png" 
-             alt="La Houston: Arquitectura de una Obra Maestra" 
+    <header class="w-full max-w-md text-center mb-8">
+        <img src="https://raw.githubusercontent.com/haroldco45/recomiendoy.../main/houston.jpeg" 
+             alt="Houston Combo Real" 
              class="houston-image">
     </header>
 
     <main class="w-full max-w-sm">
 
         <div id="step-1" class="text-center space-y-6">
-            <h1 class="text-2xl font-black text-[#c5a059] italic uppercase tracking-tighter">¡Vota por la mejor!</h1>
-            <p class="text-gray-300 text-sm">Si disfrutaste la ingeniería culinaria de **La Houston**, califícanos en Google Maps y recibe un beneficio.</p>
+            <h1 class="text-3xl font-black italic uppercase tracking-tighter">
+                <span class="text-houston">Houston</span> te espera...
+            </h1>
+            <p class="text-gray-300 text-sm leading-relaxed">
+                Si disfrutaste nuestra **Houston**, califícanos con 5 estrellas en Google Maps y reclama tu premio.
+            </p>
             
             <a href="https://search.google.com/local/writereview?placeid=ChIJWaAJspBvW44R2bBlPDS8OQA" 
                target="_blank" 
                onclick="changeStep(2)"
-               class="btn-gold block w-full py-4 rounded-xl text-lg uppercase shadow-lg transform active:scale-95 transition-all">
+               class="btn-gold block w-full py-5 rounded-2xl text-lg uppercase shadow-[0_10px_20px_rgba(234,179,8,0.3)] transform active:scale-95 transition-all">
                DEJAR MI RESEÑA
             </a>
         </div>
 
         <div id="step-2" class="hidden text-center space-y-6">
-            <div class="inline-block p-4 bg-[#c5a059]/10 rounded-full">
-                <span class="text-5xl">✨</span>
+            <div class="inline-block p-5 bg-yellow-500/10 rounded-full">
+                <span class="text-6xl">⭐</span>
             </div>
             <h2 class="text-2xl font-bold">¿Ya nos calificaste?</h2>
-            <p class="text-gray-400 text-sm">Tu opinión ayuda a que **A Bocados** siga conquistando paladares.</p>
+            <p class="text-gray-400 text-sm">Tu opinión ayuda a que **A Bocados** siga creciendo en Caucasia.</p>
             
             <button onclick="changeStep(3)" 
-                    class="w-full bg-white text-black font-black py-4 rounded-xl uppercase tracking-widest hover:bg-gray-200">
+                    class="w-full bg-white text-black font-black py-4 rounded-2xl uppercase tracking-widest hover:bg-gray-200">
                 GENERAR MI REGALO
             </button>
         </div>
 
         <div id="step-3" class="hidden text-center space-y-6">
-            <div class="gold-border p-8 rounded-3xl bg-black/40 backdrop-blur-md relative overflow-hidden">
-                <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#c5a059]/20 rounded-full blur-2xl"></div>
-                
-                <p class="text-xs font-bold text-[#c5a059] uppercase tracking-[0.3em] mb-2">TICKET DE RECOMPENSA</p>
+            <div class="gold-border p-8 rounded-[2rem] bg-zinc-900/50 backdrop-blur-md relative overflow-hidden">
+                <p class="text-xs font-bold text-yellow-500 uppercase tracking-[0.4em] mb-2">TICKET DE RECOMPENSA</p>
                 <h3 class="text-4xl font-black text-white italic mb-4">#HOUSTON-FAN</h3>
                 
-                <div class="h-px bg-[#c5a059]/30 w-full mb-4"></div>
+                <div class="h-px bg-yellow-500/30 w-full mb-4"></div>
                 <p class="text-sm text-gray-300 font-medium">Válido por un acompañamiento gratis.</p>
             </div>
             
-            <p class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">
+            <p class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">
                 CÓDIGO DE USO ÚNICO POR CLIENTE
             </p>
         </div>
 
     </main>
 
-    <footer class="mt-auto py-8 text-center">
-        <p class="text-[9px] text-[#c5a059] font-bold tracking-[0.2em] uppercase">
+    <footer class="mt-auto py-10 text-center">
+        <p class="text-[10px] text-yellow-500/70 font-bold tracking-[0.3em] uppercase">
             © 2026 VIBRAS POSITIVAS HM - TODOS LOS DERECHOS RESERVADOS
         </p>
     </footer>
