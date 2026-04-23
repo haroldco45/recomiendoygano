@@ -13,11 +13,12 @@
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
             margin: 0 auto;
+            display: block;
         }
         .bg-custom-dark { background: radial-gradient(circle, #242424 0%, #000000 100%); }
         .gold-border { border: 2px solid #eab308; }
-        .btn-gold { background-color: #eab308; color: black; font-weight: 900; }
-        .text-houston { color: #e11d48; } /* Color similar al 'Houston' de la foto */
+        .btn-gold { background-color: #f1b301; color: black; font-weight: 900; }
+        .text-houston { color: #e11d48; }
     </style>
 </head>
 <body class="bg-custom-dark text-white font-sans min-h-screen flex flex-col items-center p-6">
@@ -25,7 +26,8 @@
     <header class="w-full max-w-md text-center mb-8">
         <img src="https://raw.githubusercontent.com/haroldco45/recomiendoy.../main/houston.jpeg" 
              alt="Houston Combo Real" 
-             class="houston-image">
+             class="houston-image"
+             onerror="this.src='https://via.placeholder.com/400x400?text=Cargando+Houston...'">
     </header>
 
     <main class="w-full max-w-sm">
@@ -41,7 +43,7 @@
             <a href="https://search.google.com/local/writereview?placeid=ChIJWaAJspBvW44R2bBlPDS8OQA" 
                target="_blank" 
                onclick="changeStep(2)"
-               class="btn-gold block w-full py-5 rounded-2xl text-lg uppercase shadow-[0_10px_20px_rgba(234,179,8,0.3)] transform active:scale-95 transition-all">
+               class="btn-gold block w-full py-5 rounded-2xl text-lg uppercase shadow-[0_10px_20px_rgba(241,179,1,0.4)] transform active:scale-95 transition-all">
                DEJAR MI RESEÑA
             </a>
         </div>
