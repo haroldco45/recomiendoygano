@@ -3,66 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIBRAS POSITIVAS HM - Rewards</title>
+    <title>A Bocados - VIBRAS POSITIVAS HM</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gold-gradient { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); }
+        .dark-card { background: #18181b; border: 1px solid #27272a; }
+    </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-black text-white font-sans min-h-screen flex flex-col items-center justify-between p-6">
 
-    <header class="bg-black text-white p-6 text-center shadow-lg">
-        <h1 class="text-2xl font-bold tracking-widest">VIBRAS POSITIVAS HM</h1>
-        <p class="text-sm opacity-80">Método R+R: Reseñas & Recompensas</p>
+    <header class="text-center mt-8">
+        <h1 class="text-4xl font-black tracking-tighter text-yellow-500">A BOCADOS</h1>
+        <div class="h-1 w-20 bg-yellow-500 mx-auto mt-2"></div>
     </header>
 
-    <main class="max-w-md mx-auto p-6">
-        <div id="step-1" class="bg-white rounded-2xl p-6 shadow-md mb-6 border-l-4 border-yellow-500">
-            <h2 class="text-xl font-semibold mb-2">1. Comparte tu experiencia</h2>
-            <p class="text-gray-600 mb-4">Califica con 5 estrellas y déjanos un comentario en Google Maps para desbloquear tu premio.</p>
-            <a href="https://search.google.com/local/writereview?placeid=TU_GOOGLE_PLACE_ID" 
+    <main class="w-full max-w-sm dark-card rounded-3xl p-8 shadow-2xl">
+        
+        <div id="step-1" class="space-y-6">
+            <div class="text-center">
+                <h2 class="text-2xl font-bold">¿Te gustó el sabor?</h2>
+                <p class="text-gray-400 mt-2">Apóyanos con 5 estrellas en Google y te regalamos un detalle especial.</p>
+            </div>
+            
+            <a href="https://search.google.com/local/writereview?placeid=ChIJWaAJspBvW44R2bBlPDS8OQA" 
                target="_blank" 
-               onclick="showStep(2)"
-               class="block text-center bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition">
-               <i class="fab fa-google mr-2"></i> Escribir Reseña
+               onclick="mostrarPaso(2)"
+               class="gold-gradient block text-center text-black font-black py-5 rounded-2xl text-lg shadow-lg active:scale-95 transition-all">
+               CALIFICAR AHORA
             </a>
         </div>
 
-        <div id="step-2" class="hidden bg-white rounded-2xl p-6 shadow-md mb-6 border-l-4 border-green-500">
-            <h2 class="text-xl font-semibold mb-2">2. ¿Ya publicaste?</h2>
-            <p class="text-gray-600 mb-4">Una vez publicada, presiona el botón para generar tu cupón de regalo.</p>
-            <button onclick="generarCupon()" 
-                    class="w-full bg-green-600 text-white font-bold py-3 rounded-xl hover:bg-green-700 transition">
-                Validar y Canjear
+        <div id="step-2" class="hidden space-y-6 text-center">
+            <div class="animate-bounce">
+                <span class="text-5xl">🍔</span>
+            </div>
+            <h2 class="text-2xl font-bold text-yellow-500">¡Casi listo!</h2>
+            <p class="text-gray-400">Una vez hayas publicado tu reseña, presiona el botón de abajo.</p>
+            
+            <button onclick="generarPremio()" 
+                    class="w-full bg-white text-black font-black py-4 rounded-2xl hover:bg-gray-200 transition">
+                YA PUBLIQUÉ MI RESEÑA
             </button>
         </div>
 
-        <div id="step-3" class="hidden bg-yellow-100 border-2 border-dashed border-yellow-600 rounded-2xl p-6 text-center shadow-inner">
-            <span class="text-xs font-bold text-yellow-800 uppercase tracking-widest">Cupón de Regalo</span>
-            <h2 id="coupon-code" class="text-4xl font-black my-4 text-gray-800">CORTESIA-VP</h2>
-            <p class="text-sm text-yellow-900 mb-4">Muestra esta pantalla al mesero para recibir tu postre o bebida gratis.</p>
-            <div class="bg-white p-2 inline-block rounded-lg shadow-sm">
-                <i class="fas fa-qrcode text-6xl text-gray-800"></i>
+        <div id="step-3" class="hidden text-center space-y-6">
+            <div class="border-4 border-dashed border-yellow-500 p-8 rounded-3xl bg-zinc-900">
+                <p class="text-xs font-bold text-yellow-500 uppercase tracking-widest mb-2">Cupón Exclusivo</p>
+                <h3 class="text-3xl font-black text-white">#RESEÑA-PRO</h3>
+                <div class="my-4 text-4xl">🎁</div>
+                <p class="text-sm text-gray-300">Muestra esto al personal para redimir tu premio.</p>
             </div>
-            <p class="mt-4 text-[10px] text-gray-500 italic">© Vibras Positivas. Todos los derechos reservados.</p>
+            <p class="text-[10px] text-gray-500 italic uppercase tracking-tighter">Propiedad Intelectual de Vibras Positivas</p>
         </div>
+
     </main>
 
+    <footer class="mb-6 text-center">
+        <p class="text-[11px] text-zinc-600 font-medium">
+            DESARROLLADO POR <span class="text-zinc-400">VIBRAS POSITIVAS</span>
+        </p>
+    </footer>
+
     <script>
-        function showStep(step) {
+        function mostrarPaso(n) {
             document.getElementById('step-1').classList.add('hidden');
-            document.getElementById(`step-${step}`).classList.remove('hidden');
+            document.getElementById('step-2').classList.remove('hidden');
         }
 
-        function generarCupon() {
-            // Lógica para simular validación de API
-            const loading = document.createElement('p');
-            loading.innerText = "Verificando reseña...";
-            loading.className = "text-blue-500 font-bold animate-pulse";
-            document.getElementById('step-2').appendChild(loading);
-
+        function generarPremio() {
+            const btn = event.target;
+            btn.innerHTML = "Validando...";
+            btn.disabled = true;
+            
             setTimeout(() => {
                 document.getElementById('step-2').classList.add('hidden');
                 document.getElementById('step-3').classList.remove('hidden');
-            }, 2000);
+            }, 1500);
         }
     </script>
 </body>
