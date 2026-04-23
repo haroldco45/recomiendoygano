@@ -3,82 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Bocados - VIBRAS POSITIVAS HM</title>
+    <title>A Bocados - Houston Real | VIBRAS POSITIVAS HM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .gold-gradient { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); }
-        .dark-card { background: #18181b; border: 1px solid #27272a; }
+        .houston-bg {
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9)), 
+                              url('https://lh3.googleusercontent.com/d/1yWlVlDk6Y8u3_T4O_m3R_M6nZ9vR3X9s'); /* Reemplazar con el link real de la imagen de la Houston */
+            background-size: cover;
+            background-position: center;
+        }
+        .gold-gradient { background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%); }
     </style>
 </head>
-<body class="bg-black text-white font-sans min-h-screen flex flex-col items-center justify-between p-6">
+<body class="bg-black text-white font-sans min-h-screen flex flex-col items-center">
 
-    <header class="text-center mt-8">
-        <h1 class="text-4xl font-black tracking-tighter text-yellow-500">A BOCADOS</h1>
-        <div class="h-1 w-20 bg-yellow-500 mx-auto mt-2"></div>
-    </header>
+    <section class="houston-bg w-full h-72 flex flex-col items-center justify-end pb-6 shadow-2xl">
+        <h1 class="text-5xl font-black tracking-tighter text-yellow-500 italic">HOUSTON</h1>
+        <p class="text-white font-bold tracking-widest text-sm uppercase">The Real Thing</p>
+    </section>
 
-    <main class="w-full max-w-sm dark-card rounded-3xl p-8 shadow-2xl">
-        
-        <div id="step-1" class="space-y-6">
-            <div class="text-center">
-                <h2 class="text-2xl font-bold">¿Te gustó el sabor?</h2>
-                <p class="text-gray-400 mt-2">Apóyanos con 5 estrellas en Google y te regalamos un detalle especial.</p>
-            </div>
+    <main class="w-full max-w-md p-6 -mt-4">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
             
-            <a href="https://search.google.com/local/writereview?placeid=ChIJWaAJspBvW44R2bBlPDS8OQA" 
-               target="_blank" 
-               onclick="mostrarPaso(2)"
-               class="gold-gradient block text-center text-black font-black py-5 rounded-2xl text-lg shadow-lg active:scale-95 transition-all">
-               CALIFICAR AHORA
-            </a>
-        </div>
-
-        <div id="step-2" class="hidden space-y-6 text-center">
-            <div class="animate-bounce">
-                <span class="text-5xl">🍔</span>
+            <div class="absolute top-4 right-4 opacity-20 w-12">
+                <svg viewBox="0 0 100 100" fill="white">
+                    <circle cx="50" cy="50" r="45" stroke="white" stroke-width="2" fill="none"/>
+                    <text x="50" y="55" font-size="10" text-anchor="middle" font-weight="bold">VIBRAS POSITIVAS</text>
+                </svg>
             </div>
-            <h2 class="text-2xl font-bold text-yellow-500">¡Casi listo!</h2>
-            <p class="text-gray-400">Una vez hayas publicado tu reseña, presiona el botón de abajo.</p>
-            
-            <button onclick="generarPremio()" 
-                    class="w-full bg-white text-black font-black py-4 rounded-2xl hover:bg-gray-200 transition">
-                YA PUBLIQUÉ MI RESEÑA
-            </button>
-        </div>
 
-        <div id="step-3" class="hidden text-center space-y-6">
-            <div class="border-4 border-dashed border-yellow-500 p-8 rounded-3xl bg-zinc-900">
-                <p class="text-xs font-bold text-yellow-500 uppercase tracking-widest mb-2">Cupón Exclusivo</p>
-                <h3 class="text-3xl font-black text-white">#RESEÑA-PRO</h3>
-                <div class="my-4 text-4xl">🎁</div>
-                <p class="text-sm text-gray-300">Muestra esto al personal para redimir tu premio.</p>
+            <div id="step-1" class="text-center space-y-6">
+                <div>
+                    <h2 class="text-2xl font-black uppercase italic">¡Vota por la mejor!</h2>
+                    <p class="text-gray-400 mt-2 text-sm">Si disfrutaste la **Houston Real**, califícanos en Google Maps y recibe un beneficio inmediato.</p>
+                </div>
+                
+                <a href="https://search.google.com/local/writereview?placeid=ChIJWaAJspBvW44R2bBlPDS8OQA" 
+                   target="_blank" 
+                   onclick="avanzar(2)"
+                   class="gold-gradient block text-center text-black font-black py-4 rounded-2xl text-lg shadow-[0_0_20px_rgba(251,191,36,0.4)] active:scale-95 transition-all">
+                   DEJAR MI RESEÑA
+                </a>
             </div>
-            <p class="text-[10px] text-gray-500 italic uppercase tracking-tighter">Propiedad Intelectual de Vibras Positivas</p>
-        </div>
 
+            <div id="step-2" class="hidden text-center space-y-6 py-4">
+                <div class="inline-block p-4 rounded-full bg-yellow-500/10 mb-2">
+                    <span class="text-4xl text-yellow-500">✨</span>
+                </div>
+                <h2 class="text-2xl font-bold">¿Ya nos calificaste?</h2>
+                <p class="text-gray-400 text-sm">Tu opinión ayuda a que **A Bocados** siga creciendo.</p>
+                
+                <button onclick="canjearPremio()" 
+                        class="w-full bg-white text-black font-black py-4 rounded-2xl hover:bg-gray-200 transition uppercase tracking-widest">
+                    Generar mi Regalo
+                </button>
+            </div>
+
+            <div id="step-3" class="hidden text-center space-y-6">
+                <div class="border-4 border-dashed border-yellow-600 p-6 rounded-3xl bg-black/50">
+                    <p class="text-xs font-bold text-yellow-500 uppercase tracking-widest mb-2">Ticket de Recompensa</p>
+                    <h3 class="text-3xl font-black text-white italic">#HOUSTON-FAN</h3>
+                    <div class="my-4 h-px bg-zinc-800"></div>
+                    <p class="text-sm text-gray-300">Válido por un acompañamiento gratis.</p>
+                </div>
+                <p class="text-[10px] text-gray-600 uppercase font-bold">Código de uso único por cliente</p>
+            </div>
+
+        </div>
     </main>
 
-    <footer class="mb-6 text-center">
-        <p class="text-[11px] text-zinc-600 font-medium">
-            DESARROLLADO POR <span class="text-zinc-400">VIBRAS POSITIVAS</span>
+    <footer class="mt-auto py-8 text-center w-full bg-black">
+        <p class="text-[10px] text-zinc-500 font-bold tracking-[0.2em]">
+            © 2026 VIBRAS POSITIVAS - TODOS LOS DERECHOS RESERVADOS
         </p>
     </footer>
 
     <script>
-        function mostrarPaso(n) {
+        function avanzar(paso) {
             document.getElementById('step-1').classList.add('hidden');
             document.getElementById('step-2').classList.remove('hidden');
         }
 
-        function generarPremio() {
+        function canjearPremio() {
             const btn = event.target;
-            btn.innerHTML = "Validando...";
+            btn.innerHTML = "PROCESANDO...";
             btn.disabled = true;
             
             setTimeout(() => {
                 document.getElementById('step-2').classList.add('hidden');
                 document.getElementById('step-3').classList.remove('hidden');
-            }, 1500);
+            }, 1800);
         }
     </script>
 </body>
